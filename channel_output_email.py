@@ -121,9 +121,9 @@ class EmailOutputChannel(OutputChannel):
                 'html': self.format_report_html()
             }
 
-            pprint.pprint(print url)
-            pprint.pprint(print auth)
-            pprint.pprint(print data)
+            pprint.pprint(url)
+            pprint.pprint(auth)
+            pprint.pprint(data)
             
             if settings.DEBUG:
                 pprint.pprint(data)
