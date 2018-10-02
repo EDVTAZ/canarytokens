@@ -121,11 +121,16 @@ class EmailOutputChannel(OutputChannel):
                 'html': self.format_report_html()
             }
 
+            pprint.pprint(print url)
+            pprint.pprint(print auth)
+            pprint.pprint(print data)
+            
             if settings.DEBUG:
                 pprint.pprint(data)
             else:
                 result = requests.post(url, auth=auth, data=data)
                 #Raise an error if the returned status is 4xx or 5xx
+                pprint.pprint(result)
                 result.raise_for_status()
 
             log.msg('Sent alert to {recipient} for token {token}'\
